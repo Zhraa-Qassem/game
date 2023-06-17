@@ -28,21 +28,29 @@ var obj = {
         // console.log(chalange)
     }
  }
+ class Chalange{
+    constructor(id,level){
+        this.id = id
+        this.level = level
+    }
+    points(){
+        User.log.push(this.id)
+        User.xp = this.xp + obj[this.level]  
+    }
+ }
 
  var user1 = new User('jad',0,[])
  console.log(user1)
 // user1.log(user1)
+let ch1 = new Chalange (1,'ME')
+ user1.newSolvedChallenge(ch1)
 
+ let ch2 = new Chalange (2,'ME')
+ user1.newSolvedChallenge(ch2)
 
+ let ch3 = new Chalange (3,'EA')
+ user1.newSolvedChallenge(ch3)
 
- user1.newSolvedChallenge({
-    id : 1,
-    level: 'VE'
- })
-
-
- let o = {id : 2,level: 'ME'}
- user1.newSolvedChallenge(o)
  console.log(user1.xp)
  console.log(user1.log)
 
